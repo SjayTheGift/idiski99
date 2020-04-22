@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block head_title %}{{ object.title }}{% endblock %}
+{% block content %}
+<div id="main-wrapper">
+    {% block header %} {% include 'header.html' %} {% endblock header %}
+
+  <section id="feature_category_section" class="feature_category_section category_page section_wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="feature_news_item category_item">
+                  <div class="item">
+                    <div class="item_wrapper">
+                      <div class="item_img">
+                        <img class="img-responsive" src="{% static 'assets/img/caregory15.jpg' %}" alt="Chania">
+                      </div>
+                      <div class="item_title_date">
+                        <div class="news_item_title">
+                          <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+                        </div>
+                        <div class="item_meta"><a href="#">20Aug- 2015,</a> by:<a href="#">Jhonson</a></div>
+                      </div>
+                    </div>
+                    <div class="item_content">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                      doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                      architecto beatae vitae dicta sunt explicabo. Nemo enim aut Sed ut perspiciatis unde omnis iste
+                      natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+                      ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                      voluptatem quia voluptas sit aspernatur aut...
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+        </div>
+    </section>
+
+ {% block footer %} {% include 'footer.html' %} {% endblock footer %}
+  </div>
+
+</div>
+{% endblock content %}
+

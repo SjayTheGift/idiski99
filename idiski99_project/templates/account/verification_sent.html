@@ -1,0 +1,25 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
+
+{% block content %}
+<div id="main-wrapper">
+    {% block header %} {% include 'header.html' %} {% endblock header %}
+
+    <section id="feature_category_section" class="feature_category_section category_page section_wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <h1>Verify Your E-mail Address</h1>
+
+            <p>We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process.
+                Please contact us if you do not receive it within a few minutes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>
+{% endblock %}

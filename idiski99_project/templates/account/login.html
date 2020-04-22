@@ -1,0 +1,39 @@
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+<div id="main-wrapper">
+{% block header %} {% include 'header.html' %} {% endblock header %}
+
+<section id="feature_category_section" class="feature_category_section category_page section_wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="center-everything">
+            <h1>{% trans "Sign In" %}</h1>
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+              {% csrf_token %}
+              {{ form | crispy }}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}
+              <button type="submit" class="btn btn-primary btn-black">Log-in</button>
+              <br/><br/>
+              <p>
+                <span class="pull-left"><a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a></span>
+                <span class="pull-right">Don't have account?<a href="{{ signup_url }}">Sign-up</a></span>
+              </p>
+              <br/>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}
+
+</div>
+{% endblock %}

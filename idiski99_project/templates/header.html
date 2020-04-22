@@ -1,0 +1,103 @@
+{% block header %}
+{% load static %}
+{% load crispy_forms_tags %}
+    <header>
+      <div class="container">
+        <div class="top_ber">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="top_ber_left" id="demo">
+
+                <script>
+                  var d = new Date().toDateString();
+                  document.getElementById("demo").innerHTML = d;
+                </script>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="top_ber_right">
+                <div class="top-menu">
+                  <ul class="nav navbar-nav">
+                      {% if user.is_authenticated %}
+                      <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+                      <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+                      {% else %}
+                      <li><a href="{% url 'account_login' %}">Sign In</a></li>
+                      <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+                      {% endif %}
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header-section">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="logo">
+                <a href="index.html"><img class="img-responsive" src="assets/img/logo.png" alt=""></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="header_ad_banner">
+                <a href="#"><img class="img-responsive" src="{% static 'assets/img/img_ad.jpg' %}" alt=""></a>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="social_icon1">
+                <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
+
+                <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
+
+                <a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a>
+
+                <a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a>
+
+                <a class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu_area">
+          <div class="row">
+            <nav class="navbar main-menu navbar-inverse navbar-static-top" role="navigation">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="offcanvas">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse sidebar-offcanvas">
+                  <ul class="nav navbar-nav">
+                    <li class="hidden"><a href="#page-top"></a></li>
+                    <li><a class="page-scroll" href="{% url 'post_list' %}">Home</a></li>
+                    <li><a class="page-scroll" href="/category/local-news/">Local News</a></li>
+                    <li><a class="page-scroll" href="/category/world-news/">World News</a></li>
+                    <li><a class="page-scroll" href="/category/live-scores/">Live Scores</a></li>
+                    <li><a class="page-scroll" href="/category/leagues-tables/">Leagues Tables</a></li>
+                    <li><a class="page-scroll" href="/category/transfer-news/">Transfer News</a></li>
+                  </ul>
+
+                  <div class="pull-right">
+                    <form class="navbar-form" role="search">
+                      <div class="input-group">
+                        <input class="form-control" placeholder="Search" name="q" type="text">
+                        <div class="input-group-btn">
+                          <button class="btn btn-default" type="submit"><i class="fa fa-search"
+                              aria-hidden="true"></i></button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+{% endblock header %}
