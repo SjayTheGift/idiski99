@@ -1,4 +1,4 @@
-# 36 Music Album API
+# Soccer Magazine
 ## How to run my app
 1. Clone the app to your computer.
 2. Open terminal or cmd  and go to file location where project cloned.
